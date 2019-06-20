@@ -12,7 +12,6 @@ namespace Panacea.Modularity.TerminalPairing
         event EventHandler Disconnected;
         bool IsConnected { get; }
         TerminalRelation Relation { get; }
-        Terminal Terminal { get; }
         string HostName { get; }
         Task TryConnect();
         void Off<T>(string action, Action<T> callback);
