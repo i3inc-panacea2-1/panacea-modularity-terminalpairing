@@ -13,7 +13,7 @@ namespace Panacea.Modularity.TerminalPairing
         {
             return core.PluginLoader.GetPlugin<IPairingPlugin>();
         }
-        public static bool TryGetWebBrowser(this PanaceaServices core, out IPairingPlugin plugin)
+        public static bool TryGetPairingPlugin(this PanaceaServices core, out IPairingPlugin plugin)
         {
             plugin = null;
             var pairingPlugin = core.PluginLoader.GetPlugins<IPairingPlugin>().FirstOrDefault();
@@ -24,6 +24,5 @@ namespace Panacea.Modularity.TerminalPairing
             plugin = pairingPlugin;
             return true;
         }
-
     }
 }
