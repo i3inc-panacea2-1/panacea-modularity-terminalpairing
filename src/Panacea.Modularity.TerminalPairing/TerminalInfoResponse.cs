@@ -9,7 +9,7 @@ namespace Panacea.Modularity.TerminalPairing
         public string TerminalName { get; set; }
 
         [DataMember(Name = "boundToTerminal")]
-        public Terminal Terminal { get; set; }
+        public Terminal BoundTerminal { get; set; }
 
         [DataMember(Name = "relationType")]
         public TerminalRelation Relation { get; set; }
