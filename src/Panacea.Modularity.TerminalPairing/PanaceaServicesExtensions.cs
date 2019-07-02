@@ -13,16 +13,10 @@ namespace Panacea.Modularity.TerminalPairing
         {
             return core.PluginLoader.GetPlugin<IPairingPlugin>();
         }
-        public static bool TryGetPairingPlugin(this PanaceaServices core, out IPairingPlugin plugin)
+        public static bool TryGetPairing(this PanaceaServices core, out IBoundTerminalManager manager)
         {
-            plugin = null;
-            var pairingPlugin = core.PluginLoader.GetPlugins<IPairingPlugin>().FirstOrDefault();
-            if (pairingPlugin == null)
-            {
-                return false;
-            }
-            plugin = pairingPlugin;
-            return true;
+            manager = core.PluginLoader.GetPlugins<IPairingPlugin>().FirstOrDefault()?.GetBoundTerminalManager();
+            return manager != null;
         }
     }
 }
